@@ -1,0 +1,33 @@
+# Appointment Booking App - Backend
+
+This is the **backend API** for the Appointment Booking System, built with:
+
+- Node.js
+- Express.js
+- Prisma ORM (with PostgreSQL)
+- JWT Authentication
+- Role-based access (`admin`, `patient`)
+
+---
+
+## 📦 Folder Structure
+appointment-booking/
+├── backend/
+│   ├── server.js                 ← Main backend server
+│   ├── package.json             ← Backend dependencies
+│   ├── .env                     ← Backend environment variables
+│   └── prisma/
+│       └── schema.prisma  
+
+<img width="1405" height="854" alt="image" src="https://github.com/user-attachments/assets/af06cefd-0ab0-49c2-b533-ec6f0d76d53a" />
+<img width="1406" height="859" alt="image" src="https://github.com/user-attachments/assets/319e0460-044d-441f-91d2-d8460cd64e7a" />
+<img width="1411" height="879" alt="image" src="https://github.com/user-attachments/assets/3171c1f2-dfa9-4cce-a44e-9ce49eb2468b" />
+
+
+
+👨‍💻 Author
+Nandhakumar Nagaraj
+Full Stack Developer Cum Trainer – Java / Node.js
+nandhakumar.n.dev@gmail.com
+
+I'm here to help.
