@@ -11,7 +11,7 @@ This is the **backend API** for the Appointment Booking System, built with:
 ---
 
 ## 📦 Folder Structure
-appointment-booking/
+appointment-booking/          
 ├── backend/
 │   ├── server.js                 ← Main backend server
 │   ├── package.json             ← Backend dependencies
@@ -25,9 +25,12 @@ appointment-booking/
 
 
 
-👨‍💻 Author
+👨‍💻 Author 
+
 Nandhakumar Nagaraj
+
 Full Stack Developer Cum Trainer – Java / Node.js
+
 nandhakumar.n.dev@gmail.com
 
 I'm here to help.
