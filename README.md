@@ -13,16 +13,22 @@ This is the **backend API** for the Appointment Booking System, built with:
 ## 📦 Folder Structure
 
 appointment-booking/  
+
 |
-├── backend/
+├── backend/ 
+
 |   |
 │   ├── server.js                 ← Main backend server
+
 |   |
 │   ├── package.json             ← Backend dependencies
+
 |   |
 │   ├── .env                     ← Backend environment variables
+
 |   |
 │   └── prisma/
+
 |       |
 │       └── schema.prisma  
 
