@@ -341,7 +341,7 @@ app.get('/api/all-bookings', authenticateToken, requireAdmin, async (req, res) =
 });
 
 // Health check
-app.get('/health', (req, res) => {
+app.get('/', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
@@ -363,6 +363,11 @@ const init = async () => {
     process.exit(1);
   }
 };
+app.use(cors({
+  origin: "https://appointment-booking-frontend-beta.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 init();
 
@@ -370,4 +375,5 @@ init();
 process.on('SIGINT', async () => {
   await prisma.$disconnect();
   process.exit();
+
 });
