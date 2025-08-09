@@ -2,7 +2,7 @@
   "name": "appointment-booking-backend",
   "version": "1.0.0",
   "description": "Backend API for appointment booking system",
-  "main": "server.js",
+  "main": " node Server.js",
   "scripts": {
     "start": "node Server.js",
     "dev": "nodemon Server.js",
