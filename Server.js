@@ -12,7 +12,7 @@ const prisma = new PrismaClient();
 
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: process.env.FRONTEND_URL || 'https://appointment-booking-frontend-coral.vercel.app',
   credentials: true
 }));
 app.use(express.json());
@@ -377,3 +377,4 @@ process.on('SIGINT', async () => {
   process.exit();
 
 });
+
