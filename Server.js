@@ -364,7 +364,7 @@ const init = async () => {
   }
 };
 app.use(cors({
-  origin: "https://appointment-booking-frontend-beta.vercel.app",
+  origin: "https://appointment-booking-frontend-coral.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
@@ -377,4 +377,5 @@ process.on('SIGINT', async () => {
   process.exit();
 
 });
+
 
