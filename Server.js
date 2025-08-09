@@ -4,24 +4,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const rateLimit = require('express-rate-limit');
 const { PrismaClient } = require('@prisma/client');
-
+const cors = require('cors');
 require('dotenv').config();
-const allowedOrigins = [
-  "https://appointment-booking-frontend-coral.vercel.app",
-  "http://localhost:3000"
-];
-
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true
-}));
-
 
 const app = express();
 const prisma = new PrismaClient();
@@ -379,6 +363,13 @@ const init = async () => {
     process.exit(1);
   }
 };
+
+app.use(cors({
+  origin: "https://appointment-booking-frontend-beta.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 
 init();
 
