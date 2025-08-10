@@ -46,7 +46,7 @@ const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100 // limit each IP to 100 requests per windowMs
 });
-app.use('/api', limiter);
+app.use('/', limiter);
 
 // Auth middleware
 const authenticateToken = (req, res, next) => {
@@ -153,7 +153,7 @@ const seedAdmin = async () => {
 };
 
 // Routes
-app.post('/api/register', async (req, res) => {
+app.post('/register', async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
@@ -210,7 +210,7 @@ app.post('/api/register', async (req, res) => {
   }
 });
 
-app.post('/api/login', async (req, res) => {
+app.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -249,7 +249,7 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-app.get('/api/slots', async (req, res) => {
+app.get('/slots', async (req, res) => {
   try {
     const { from, to } = req.query;
     
@@ -274,7 +274,7 @@ app.get('/api/slots', async (req, res) => {
   }
 });
 
-app.post('/api/book', authenticateToken, async (req, res) => {
+app.post('/book', authenticateToken, async (req, res) => {
   try {
     const { slotId } = req.body;
 
@@ -328,7 +328,7 @@ app.post('/api/book', authenticateToken, async (req, res) => {
   }
 });
 
-app.get('/api/my-bookings', authenticateToken, async (req, res) => {
+app.get('/my-bookings', authenticateToken, async (req, res) => {
   try {
     const bookings = await prisma.booking.findMany({
       where: { userId: req.user.userId },
@@ -345,7 +345,7 @@ app.get('/api/my-bookings', authenticateToken, async (req, res) => {
   }
 });
 
-app.get('/api/all-bookings', authenticateToken, requireAdmin, async (req, res) => {
+app.get('/all-bookings', authenticateToken, requireAdmin, async (req, res) => {
   try {
     const bookings = await prisma.booking.findMany({
       include: {
